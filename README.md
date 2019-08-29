@@ -27,6 +27,7 @@ For developers, the tool should enable developers to build dapps so that the web
 * Install the ionic CLI globally: `npm install -g ionic`
 * Clone this repository.
 * Run `npm install` from the project root.
+* This project uses the Kulap-core Libra library https://github.com/kulapio/libra-core v1.0.16
 * Go to node_modules/kulap-libra/build/client/index.ts and make sure to comment the following line except the line 5
 ```
     // if (this.config.dataProtocol === 'grpc') {

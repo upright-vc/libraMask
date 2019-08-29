@@ -1,0 +1,24 @@
+<ion-app>
+  <ion-split-pane>
+    <!-- side menu  -->
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>LibraMask</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="true" *ngFor="let p of pages">
+            <app-menu-item (click)=handleClick(p.url) [link]="p"></app-menu-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu> 
+  
+      
+
+    <!-- the main content -->
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

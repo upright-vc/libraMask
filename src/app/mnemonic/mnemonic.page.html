@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mnemonic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="logoholder animated heartBeat" text-center>
+        <img src="assets/imgs/libra.png" alt="">
+    </div>
+    <div class="detailsholder" text-center padding>
+        <ion-item>
+            <ion-label>Ensure to copy wallet seed phrase.</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-textarea readonly="true" id="textinput" autosize [(ngModel)]="seedPhrase"></ion-textarea>
+        </ion-item>
+    </div>
+    <div class="butnsholder" padding>
+        <ion-button class="loginbtn" color="primary"  shape="round" expand="block" (click)="proceed()">PROCEED</ion-button>      
+    </div>
+
+</ion-content>

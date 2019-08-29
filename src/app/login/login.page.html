@@ -1,0 +1,20 @@
+
+<ion-content padding>
+    <div text-center>
+        <h2>LibraMask</h2>
+        <h4>Browser Gateway to Libra Blockchain</h4>
+        <img src="assets/imgs/libra.png" alt="">
+    </div>
+    <div text-center padding>
+        <ion-item>
+          <span item-start><ion-icon color="primary" name="lock"></ion-icon> </span>
+          <ion-input type="password" placeholder="PASSWORD" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button color="primary"  shape="round" expand="block" (click)="doLogin()">LOGIN</ion-button>      
+    </div>
+    <div padding>
+        <ion-label>Import an existing wallet?</ion-label>
+        <ion-button color="primary"  shape="round" expand="block" fill="outline" (click)="import()">IMPORT</ion-button>
+    </div> 
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Send Coin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+      <br>      
+      <ion-item>
+        <span item-start>
+          <ion-icon color="primary" name="person"></ion-icon>
+        </span>
+        <ion-input type="text" placeholder="RECIPIENT ADDRESS" [(ngModel)]="toAddress"></ion-input>
+      </ion-item>
+      <ion-item>
+          <span item-start>
+              <ion-icon color="primary" name="cash"></ion-icon>
+          </span>
+          <ion-input type="number" placeholder="AMOUNT" [(ngModel)]="amount"></ion-input>
+      </ion-item>
+    
+      <div padding text-center>
+        <ion-button class="nxtstpbtn" color="primary" shape="round" expand="block" (click)="sendFunds()"><ion-icon name="send"></ion-icon>SEND</ion-button>
+      </div>    
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>import</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+
+    <div class="logoholder animated pulse" padding text-center>
+        <img src="./assets/imgs/libra.png" alt="">
+        <p>
+          Enter wallet seed phrase
+        </p>
+        
+    </div>
+    <ion-item>
+          <ion-textarea class="text" type="text" placeholder="Seed Phrase" [(ngModel)]="seedPhrase"></ion-textarea>
+    </ion-item>
+      <ion-item>
+          <span item-start><ion-icon color="primary" name="lock"></ion-icon> </span>
+          <ion-input class="password" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <div class="butnsholder" padding>
+          <ion-button color="primary" shape="round" expand="block" class="signupbtn" (click)="importWallet()">IMPORT WALLET</ion-button>
+          <ion-button color="primary" shape="round" expand="block" fill="outline" class="loginbtn" (click)="later()">NOT NOW</ion-button>
+      </div>
+
+</ion-content>

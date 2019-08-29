@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Account QR Code</ion-title>
+    <ion-buttons slot="end">
+        <ion-button fill="outline" shape="round">
+          <ion-icon name="ios-browsers"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center padding>
+
+      <ion-card padding>
+            <qrcode [usesvg]=true [qrdata]="address" [colordark]="'#000'" [size]="100" [level]="'M'"></qrcode>
+            <h1 text-wrap id="addressText" STYLE="color: #7e57ff; font-size: 10pt">{{ address }}</h1>
+      </ion-card>
+      <br>
+      <ion-button color="primary" fill="outline" shape="round" expand="block" (click)="displaySecKey()">{{ showNoshowText }} SECRET KEY</ion-button>      
+      <ion-card padding *ngIf="showSecKey">
+          <h1 text-wrap id="seckeyText" STYLE="color: #7e57ff; font-size: 10pt">{{ secKey }}</h1>
+      </ion-card>
+      
+
+</ion-content>

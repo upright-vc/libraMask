@@ -1,0 +1,72 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button fill="outline" shape="round" alt="Open in Libra Browser" (click)="explore('account',address)">
+          <ion-icon name="open"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>
+       <span >{{truncAddress}}</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center >
+      <ion-item no-lines>
+        <ion-label>BALANCE</ion-label>
+        <ion-chip slot="end">
+            <ion-label style="margin-right: 8px;">{{balance | number:'1.3-3'}} </ion-label> 
+            <br>
+            <ion-avatar class="image-center">
+                <img src="./assets/imgs/libra.png">
+            </ion-avatar> 
+            <ion-icon name="refresh" color="dark" (click)="refresh()"></ion-icon>            
+        </ion-chip>
+      </ion-item>
+      <br>
+      <ion-label>HISTORY</ion-label>
+      <ion-card>
+          <ion-list *ngFor="let tx of txs; let i = index" >
+              <div class="childcard1">
+                    <ion-item no-lines>
+                          <ion-badge color="medium" shape="round" alt="Open in Libra Browser" slot="end" (click)="explore('version',tx.version)"><ion-icon item-end   name="open" ></ion-icon></ion-badge>
+                          <ion-icon color="medium"  name="arrow-round-back" *ngIf="address===tx.from" item-start></ion-icon>
+                          <ion-icon color="primary"  name="arrow-round-forward" *ngIf="address!==tx.from" item-start></ion-icon>
+                          <ion-label item-end> {{tx.value/1e6}} LIBRA</ion-label>
+                          <ion-label item-start *ngIf="address===tx.from">{{tx.to}}</ion-label>
+                          <ion-label item-start *ngIf="address!==tx.from">{{tx.from}}</ion-label>
+                    </ion-item>
+              </div>
+          </ion-list>
+        </ion-card>
+
+</ion-content>
+
+<ion-footer text-center no-border transparent translucent=true>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <ion-button expnad="full" icon-left (click)="transfer()">
+                    <ion-icon name="arrow-up"></ion-icon>
+                    SEND
+                </ion-button>
+              </ion-col>
+              <!-- <ion-col col-2>
+                <ion-button  icon-only (click)="history()">
+                    <ion-icon name="list"></ion-icon>
+                </ion-button>
+              </ion-col> -->
+              <ion-col col-6>
+                <ion-button expnad="full" icon-right (click)="receive()">
+                    RECEIVE
+                    <ion-icon name="arrow-down"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-toolbar>
+  </ion-footer>

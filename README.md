@@ -28,12 +28,14 @@ For developers, the tool should enable developers to build dapps so that the web
 * Clone this repository.
 * Run `npm install` from the project root.
 * Go to node_modules/kulap-libra/build/client/index.ts and make sure to comment the following line except the line 5
+```
     // if (this.config.dataProtocol === 'grpc') {
     //    this.admissionControlProxy = require('./Node');
     // }
     // else {
           this.admissionControlProxy = require('./Browser');
     // }
+```
 * Run `ionic serve --l` in a terminal from the project root.
 
 ## Building the chrome extension
@@ -41,7 +43,7 @@ For developers, the tool should enable developers to build dapps so that the web
 * Run `ng build` from the project root.
 * Under the created www folder create a new file (manifest.json)
 * copy the following text in the manifest.json file and save it
-
+```
     {
       "name": "LibraMask Chrome Extension",
       "version": "0.1",
@@ -53,7 +55,7 @@ For developers, the tool should enable developers to build dapps so that the web
     },
       "manifest_version": 2
     }
-
+```
 * Go to the index.html file under the www folder comment the upper section of the file and uncomment the lower section and save the file
 * Now in the chrome broswer go to extension and enable developer mode
 * Click on upload unpacked extension and point to the www folder under the project

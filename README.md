@@ -9,7 +9,7 @@ Main requirements will include:
 - Storing the wallet info locally in encrypted format (aes256). (Done)
 - Capability to export account’s private key. (Done)
 - Account balance query. (Done)
-- View transaction history. (Implemented but has an issue with api endpoint used related to CORS policy: No 'Access-Control-Allow-Origin')
+- View transaction history. (Done)
 - Send and transfer coins. (Done)
 - Receive coins by displaying account address as a QR code. (Done)
 - Capability to inject in opened website as a js object to access wallet functions for submitting transactions or querying the chain. (Not yet)

@@ -17,13 +17,13 @@
 <ion-content text-center >
       <ion-item no-lines>
         <ion-label>BALANCE</ion-label>
-        <ion-chip slot="end">
+        <ion-chip slot="end" (click)="addToken()">
             <ion-label style="margin-right: 8px;">{{balance | number:'1.3-3'}} </ion-label> 
             <br>
             <ion-avatar class="image-center">
                 <img src="./assets/imgs/libra.png">
             </ion-avatar> 
-            <ion-icon name="refresh" color="dark" (click)="refresh()"></ion-icon>            
+            <ion-icon name="add" color="dark" ></ion-icon>            
         </ion-chip>
       </ion-item>
       <br>

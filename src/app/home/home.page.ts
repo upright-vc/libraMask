@@ -41,6 +41,41 @@ export class HomePage {
       this.navCtrl.navigateForward('/transfer')
     }
 
+    async addToken() {
+      let confirm = await this.alrtCtrl.create({
+        header: 'Mint Libra Token',
+        message: 'Enter amount of Libra Coin to mint and receive in your account',
+        inputs: [
+          {
+            name: 'amount',
+            placeholder: 'Amount of Libra Coins'
+          }
+        ],
+        buttons: [{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+             
+          }
+        }, {
+          text: 'Confirm',
+          handler: data => {
+            this.mint(data.amount);
+          }
+        }]
+      });
+      confirm.present();
+    }
+
+    mint(amount){
+      this._wallet.mint(amount)
+      .then( res => {
+        this.ngOnInit();
+      }, (err) => {
+        alert("Minting operation failed");
+      });
+    }
+
     getHistory() {
       this._wallet.getHistory()
       .then(res => {

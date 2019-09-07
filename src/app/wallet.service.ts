@@ -108,4 +108,15 @@ export class WalletService {
     return phrase;
   }
 
+  mint(amount) {
+    let body = { "address": this.activeAccount.getAddress().toString(), "amount": amount};
+    return new Promise((resolve, reject) => {
+      this._http.post('https://libraservice3.kulap.io/mint',(body)).subscribe(data => {
+        resolve(data);
+      }, err => {
+        reject(err);
+      });
+    });
+  }
+
 }

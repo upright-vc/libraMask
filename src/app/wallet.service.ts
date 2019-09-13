@@ -62,7 +62,7 @@ export class WalletService {
   }
 
   public async sendFunds(toAddress: string, amount: number) {
-    const response = await this.client.transferCoins(this.activeAccount, toAddress, 1e6);
+    const response = await this.client.transferCoins(this.activeAccount, toAddress, Number(amount)*1e6);
     return await response.awaitConfirmation(this.client);
   }
 

@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "target": "es5",
     "lib": [
-      "es2017",
+      "es2017","es2015",
       "dom"
     ]
   }

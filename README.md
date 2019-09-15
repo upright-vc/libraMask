@@ -16,7 +16,7 @@ Main requirements will include:
 - Capability of linking wallet to a single sign-in identity (e.g. Facebook Sign-in). (Not yet)
 - Capability to view transactions and accounts on supported Libra Blockchain Explorer(s). (Done)
 
-LibraMask is envisioned as a tool to enable both end users and developers to interact with Libra Blockcian in simple way from within the browser. 
+LibraMask is envisioned as a tool to enable both end users and developers to interact with Libra Blockcian in simple way from within the browser.
 Managing accounts, wallets and all associated crypto keys is a daunting task for users and developers. LibraMask Chrome Extension is meant to enable an easier way for maintaining wallets and accounts information and storing credentials.
 An end user will be able to save his account and wallet info in the extension and use the tool to interact and experiment with the Libra Blockchain by creating a new account or importing an existing one. Users can experiment in the current phase using the testnet sending and receiving Libra coins and viewing transactions history.
 For developers, the tool should enable developers to build dapps so that the web app can access an injected object and interact through the APIs or SDK with the Libra Blockchain.
@@ -47,4 +47,4 @@ For developers, the tool should enable developers to build dapps so that the web
 * Now in the chrome broswer go to extension and enable developer mode
 * Click on upload unpacked extension and point to the www folder under the project
 * Hooray now the extension appears in the browser tool bar
-
+* If you are having issues with stream and crypto upon running ng build, go to node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/browser.js and change `node: false` to `node: {crypto: true, stream: true}`

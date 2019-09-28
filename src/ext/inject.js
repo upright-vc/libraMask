@@ -8,8 +8,8 @@ window.addEventListener("message", function(event) {
     console.log('message', message);
   }
 
-  chrome.runtime.sendMessage({message});
-})
+  chrome.runtime.sendMessage(message);
+});
 
 // Example call from webpage:
 // window.postMessage({type: "FROM_PAGE", method: "transfer", payee: "0x0", amount: "100"}, "*");

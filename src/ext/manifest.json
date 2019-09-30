@@ -18,5 +18,8 @@
       "js": ["inject.js"]
     }
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
     "manifest_version": 2
   }

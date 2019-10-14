@@ -1,6 +1,7 @@
 import { NavController ,MenuController } from '@ionic/angular';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WalletService} from '../wallet.service';
+import { AuthService, FacebookLoginProvider } from 'angularx-social-login';
 
 import * as CryptoJS from 'crypto-js';
 
@@ -14,7 +15,8 @@ export class LoginPage implements OnInit, OnDestroy {
   constructor(
     private menuCtrl: MenuController, 
     private navCtrl: NavController,
-    private _wallet: WalletService
+    private _wallet: WalletService,
+    private _socioAuthServ: AuthService
   ) { 
     this.password = '';
   }
@@ -44,6 +46,29 @@ export class LoginPage implements OnInit, OnDestroy {
 
   import() {
     this.navCtrl.navigateForward('/import');
+  }
+
+  public socialSignIn(socialPlatform : string) {
+    // let socialPlatformProvider;
+    // if(socialPlatform == "facebook"){
+    //   socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    // }
+    let platform = FacebookLoginProvider.PROVIDER_ID;
+    this._socioAuthServ.signIn(platform).then(
+      (response) => {
+        console.log(platform + " logged in user data is= ", response);
+        // this.user = response;
+      }
+    );
+    
+    // this.socialAuthService.signIn(socialPlatformProvider).then(
+    //   (userData) => {
+    //     console.log(socialPlatform+" sign in data : " , userData);
+    //     // Now sign-in with userData
+    //     // ...
+            
+    //   }
+    // );
   }
 
 }

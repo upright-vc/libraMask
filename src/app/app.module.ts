@@ -12,15 +12,31 @@ import { AppComponent } from './app.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { QRCodeModule } from 'angularx-qrcode';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { FacebookLoginProvider } from "angularx-social-login";
+
+const facebook_oauth_client_id: string = '749200995505554';
+let config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider(facebook_oauth_client_id)
+  }
+]);
+
+ 
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [AppComponent, MenuItemComponent],
   entryComponents: [],
-  imports: [BrowserModule,HttpClientModule, QRCodeModule, StorageServiceModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [SocialLoginModule.initialize(config),BrowserModule,HttpClientModule, QRCodeModule, StorageServiceModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SettingsService,
     SplashScreen,
+    { provide: AuthServiceConfig, useFactory: provideConfig},
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

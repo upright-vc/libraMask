@@ -12,14 +12,5 @@
     "*://libraservice3.kulap.io/*",
     "*://*.libexplorer.com/*"
   ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["inject.js"]
-    }
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  },
     "manifest_version": 2
   }

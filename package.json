@@ -39,7 +39,7 @@
     "grpc": "^1.23.3",
     "kulap-libra": "^2.0.4",
     "ngx-webstorage-service": "^4.1.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "rxjs": "6.3.3",
     "tar": "^4.4.10",
     "zone.js": "^0.8.29"
